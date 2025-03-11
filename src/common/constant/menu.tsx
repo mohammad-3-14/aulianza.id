@@ -24,7 +24,7 @@ const iconSize = 20;
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
-    title: 'Home',
+    title: 'خانه',
     href: '/',
     icon: <HomeIcon size={iconSize} />,
     isShow: true,
@@ -33,7 +33,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     type: 'Pages',
   },
   {
-    title: 'Dashboard',
+    title: 'داشببورد',
     href: '/dashboard',
     icon: <DashboardIcon size={iconSize} />,
     isShow: true,
@@ -42,7 +42,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     type: 'Pages',
   },
   {
-    title: 'Projects',
+    title: 'پروژه ها',
     href: '/projects',
     icon: <ProjectIcon size={iconSize} />,
     isShow: true,
@@ -51,7 +51,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     type: 'Pages',
   },
   {
-    title: 'Blog',
+    title: 'دانشنامه',
     href: '/blog',
     icon: <BlogIcon size={iconSize} />,
     isShow: true,
@@ -60,7 +60,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     type: 'Pages',
   },
   {
-    title: 'Learn',
+    title: 'دوره های آموزشی',
     href: '/learn',
     icon: <LearnIcon size={iconSize} />,
     isShow: true,
@@ -69,7 +69,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     type: 'Pages',
   },
   {
-    title: 'About',
+    title: 'درباره من',
     href: '/about',
     icon: <ProfileIcon size={iconSize} />,
     isShow: true,
@@ -78,7 +78,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     type: 'Pages',
   },
   {
-    title: 'Contact',
+    title: 'تماس با من',
     href: '/contact',
     icon: <ContactIcon size={iconSize} />,
     isShow: true,
@@ -87,7 +87,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     type: 'Pages',
   },
   {
-    title: 'Guestbook',
+    title: 'چت آنلاین',
     href: '/guestbook',
     icon: <ChatIcon size={iconSize} />,
     isShow: true,
@@ -99,7 +99,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
 
 export const MENU_APPS: MenuItemProps[] = [
   {
-    title: 'JS Playground',
+    title: ' جاوا اسکریپت رانر',
     href: '/playground',
     icon: <SiJavascript size={iconSize} />,
     isShow: true,
@@ -111,7 +111,7 @@ export const MENU_APPS: MenuItemProps[] = [
 
 export const SOCIAL_MEDIA: MenuItemProps[] = [
   {
-    title: 'Email',
+    title: 'ایمیل',
     href: 'mailto:aulianza.dev@gmail.com',
     icon: <EmailIcon size={iconSize} />,
     isShow: true,
@@ -122,7 +122,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   },
 
   {
-    title: 'Linkedin',
+    title: 'لینکدین',
     href: 'https://www.linkedin.com/in/aulianza/',
     icon: <LinkedinIcon size={iconSize} />,
     isShow: true,
@@ -132,7 +132,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     type: 'Link',
   },
   {
-    title: 'Twitter',
+    title: 'تویتر',
     href: 'https://twitter.com/aulianzaa',
     icon: <TwitterIcon size={iconSize} />,
     isShow: true,
@@ -142,7 +142,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     type: 'Link',
   },
   {
-    title: 'Instagram',
+    title: 'اینستاگرام',
     href: 'https://instagram.com/aulianza',
     icon: <InstagramIcon size={iconSize} />,
     isShow: true,
@@ -152,7 +152,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     type: 'Link',
   },
   {
-    title: 'Github',
+    title: 'گیت هاب',
     href: 'https://github.com/aulianza',
     icon: <GithubIcon size={iconSize} />,
     isShow: true,

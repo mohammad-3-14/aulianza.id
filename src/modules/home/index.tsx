@@ -1,9 +1,9 @@
 import Breakline from '@/common/components/elements/Breakline';
 
-import BlogPreview from './BlogPreview';
-import Introduction from './Introduction';
-import Services from './Services';
-import SkillsSection from './SkillsSection';
+import BlogPreview from './components/BlogCarousel';
+import Introduction from './components/Introduction';
+import Services from './components/Services';
+import SkillsSection from './components/SkillsSection';
 
 const Home = () => {
   return (

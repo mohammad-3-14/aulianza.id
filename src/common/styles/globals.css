@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'iransansx';
+  src: url(/fonts/iransansx/s-bold.woff2) format('woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'iransansx';
+  src: url(/fonts/iransansx/s-regular.woff2) format('woff2');
+  font-weight: 400;
+}
+
 :root {
   --color-dark: #121212;
   --color-light: #fafafa;
@@ -51,4 +62,9 @@ a {
 
 ::-webkit-scrollbar-thumb {
   @apply rounded-[3px] border-2 border-neutral-300 bg-neutral-600 dark:bg-neutral-400;
+}
+
+html {
+  direction: rtl;
+  font-family: iransansx;
 }

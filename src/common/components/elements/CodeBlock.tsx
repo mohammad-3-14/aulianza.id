@@ -4,55 +4,17 @@ import {
   HiCheckCircle as CheckIcon,
   HiOutlineClipboardCopy as CopyIcon,
 } from 'react-icons/hi';
-import { CodeProps } from 'react-markdown/lib/ast-to-react';
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css';
-import diff from 'react-syntax-highlighter/dist/cjs/languages/prism/diff';
-import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
-import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
-import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
-import { a11yDark as themeColor } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { useCopyToClipboard } from 'usehooks-ts';
 
-const languages = {
-  javascript: 'javascript',
-  typescript: 'typescript',
-  diff: 'diff',
-  tsx: 'tsx',
-  css: 'css',
-};
+const CodeBlock = ({ className = '', children, inline, ...props }: any) => {
+  const [isCopied, setIsCopied] = useState(false);
+  const [, copy] = useCopyToClipboard();
 
-SyntaxHighlighter.registerLanguage(languages.javascript, javascript);
-SyntaxHighlighter.registerLanguage(languages.typescript, typescript);
-SyntaxHighlighter.registerLanguage(languages.diff, diff);
-SyntaxHighlighter.registerLanguage(languages.tsx, tsx);
-SyntaxHighlighter.registerLanguage(languages.css, css);
-
-const CodeBlock = ({
-  className = '',
-  children,
-  inline,
-  ...props
-}: CodeProps) => {
-  const [isCopied, setIsCopied] = useState<boolean>(false);
-  // eslint-disable-next-line unused-imports/no-unused-vars
-  const [value, copy] = useCopyToClipboard();
-  const match = /language-(\w+)/.exec(className || '');
-
-  const handleCopy = (code: string) => {
-    copy(code);
+  const handleCopy = async (content: string) => {
+    await copy(content);
     setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
   };
-
-  useEffect(() => {
-    if (isCopied) {
-      const timeout = setTimeout(() => {
-        setIsCopied(false);
-      }, 2000);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [isCopied]);
 
   return (
     <>
@@ -71,22 +33,9 @@ const CodeBlock = ({
               <CheckIcon size={18} className='text-green-600' />
             )}
           </button>
-
-          <SyntaxHighlighter
-            {...props}
-            style={themeColor}
-            customStyle={{
-              padding: '20px',
-              fontSize: '14px',
-              borderRadius: '8px',
-              paddingRight: '50px',
-            }}
-            PreTag='div'
-            language={match ? match[1] : 'javascript'}
-            wrapLongLines={true}
-          >
+          <pre className='overflow-x-auto rounded-md bg-gray-900 p-4 text-white'>
             {String(children).replace(/\n$/, '')}
-          </SyntaxHighlighter>
+          </pre>
         </div>
       ) : (
         <code className='rounded-md bg-neutral-200 px-2 py-1 text-[14px] font-light text-sky-600 dark:bg-neutral-700 dark:text-sky-300'>
